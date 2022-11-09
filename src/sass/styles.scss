@@ -1,0 +1,95 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Navigation
+	- Variables
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "generic/box-sizing";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "./base/base";
+
+@font-face {
+	font-family: 'Montserrat-Regular';
+	src: local('Montserrat-Regular'),
+	url('../fonts/Montserrat-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Montserrat-Bold';
+	src: local('Montserrat-Bold'),
+	url('../fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/components";
+
+/*--------------------------------------------------------------
+
+# Utilities
+--------------------------------------------------------------*/
+@import "utilities/utilities";
+
+/*--------------------------------------------------------------
+# Navigation
+----------------------------------------------*/
+@import "utilities/navigation";
+
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
+
+/* Variables
+--------------------------------------------- */
+@import "./utilities/variables";
+
+// Particle Background
+@import "./utilities/particle-background"; 
+
+/* index - temp
+--------------------------------------------- */
+@import "base/index";
+
+// Slick CSS Settings
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";

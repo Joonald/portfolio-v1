@@ -1,0 +1,90 @@
+#works {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.creation-tabs {
+    margin: 0 auto;
+}
+.creation-tabs li {
+    list-style: none;
+}
+.creation {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.creation .outline-btn {
+    padding: 1rem 1rem;
+    margin-top: 3rem;
+}
+
+.creation-content {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-shadow: 0px 2px 10px 5px $neonBlue;
+}
+
+.creation-content p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.tech-skill-list {
+    list-style: none;
+    margin: 0 1rem 0 1rem;
+}
+
+.tech-skill-list li {
+    display: inline-block;
+    padding-right: 1rem;
+    color: $neonBlue;
+    font-size: .75rem;
+}
+
+.sub-title {
+    margin-bottom: 0;
+    color: $neonBlue;
+    letter-spacing: .2rem;
+}
+
+.creation-content h3 {
+    margin: 0 1rem 1rem 1rem;
+    letter-spacing: .15rem;
+}
+
+.filter-tab {
+    background-color: transparent;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+    border: none;
+    color: $neonBlue;
+    text-transform: uppercase;
+}
+
+.filter-tab:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $neonBlue;
+    transition: width .4s;
+}
+
+.filter-tab:hover::after {
+    width: 100%;
+    transition: width .4s;
+}
+
+.slick-dots li.slick-active button::before {
+    color: $neonBlue !important;
+    animation: pulsate 1s ease-in-out;
+}
+
+.slick-dots {
+    position: initial !important;
+}
+

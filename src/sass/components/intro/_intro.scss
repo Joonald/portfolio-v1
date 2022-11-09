@@ -1,0 +1,21 @@
+@import '../../utilities/variables';
+
+#intro {
+    position: relative;
+    height: 75vh;
+}
+
+.neon-text {
+    color: $neonBlue;
+    letter-spacing: 3px;
+}
+
+.intro-content {
+    position: absolute;
+    top: 20%;
+}
+
+.my-name {
+    letter-spacing: 3px;
+}
+

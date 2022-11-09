@@ -1,0 +1,81 @@
+#about {
+    min-height: 50vh;
+}
+.sub-heading-text {
+    padding-top: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    overflow: hidden;
+    color: $neonBlue;
+}
+
+.sub-heading-text:after {
+    content: "";
+    display: inline-block;
+    height: 0.5rem;
+    vertical-align: baseline;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 10px;
+    border-top: 1px solid #72e5f267;
+}
+
+.social-links {
+    padding-top: 2rem;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+.social-links li {
+    display: inline-block;
+}
+
+.linkedin,
+.twitter,
+.github {
+    height: 30px;
+    width: 30px;
+}
+
+.twitter {
+    color: white;
+    animation: twitter_color .8s ease-in-out infinite alternate;
+}
+
+.linkedin {
+    color: white;
+    animation: linkedin_color .8s ease-in-out infinite alternate;
+}
+
+.github {
+    color: white;
+    animation: github_color .8s ease-in-out infinite alternate;
+}
+
+@keyframes twitter_color {
+    0% {
+        filter:  drop-shadow(0 0 3px #009dff)           
+    }
+    100% {
+        filter:  drop-shadow( 0 0 10px #009dff) 
+    }
+}
+
+@keyframes linkedin_color {
+    0% {
+        filter:  drop-shadow(0 0 3px #0077B5)           
+    }
+    100% {
+        filter:  drop-shadow( 0 0 10px #0077B5) 
+    }
+}
+
+@keyframes github_color {
+    0% {
+        filter:  drop-shadow(0 0 3px #FFF)           
+    }
+    100% {
+        filter:  drop-shadow( 0 0 10px #FFF) 
+    }
+}

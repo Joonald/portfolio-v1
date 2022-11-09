@@ -1,0 +1,53 @@
+.single-work{
+    padding-top: 2rem;
+}
+.single-work .tech-skill-list {
+    margin: 0;
+}
+
+.single-work h1 {
+    letter-spacing: .15rem;
+}
+
+.team-list li {
+    display: inline-block;
+    padding-right: 1rem;
+    color: $neonBlue;
+    font-size: .75rem;
+}
+
+.single-work .team-list {
+    margin: 0;
+}
+
+.return-nav {
+    width: fit-content;
+}
+
+.return-nav a{
+    text-decoration: none;
+    color: $neonBlue;
+    letter-spacing: 3px;
+    font-size: 1.15rem;
+    font-family: 'Montserrat-Bold';
+}
+
+.return-nav a:visited {
+    color: $neonBlue;
+}
+
+.return-nav a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $neonBlue;
+    transition: width .4s;
+}
+
+.return-nav a:hover::after {
+    width: 100%;
+    transition: width .4s;
+}
+
+

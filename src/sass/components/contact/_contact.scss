@@ -1,0 +1,69 @@
+#contact {
+   display: flex;
+   flex-direction: column;
+   min-height: 50vh;
+   position: relative;
+   align-items: center;
+   padding-top: 1rem;
+   padding-bottom: 2rem;
+   justify-content: center;
+}
+
+#contact p {
+    text-align: center;
+}
+.thank-you,
+.say-hello {
+    width: fit-content;
+}
+
+.button {
+    text-transform: uppercase;
+    color: $neonBlue;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    position: relative;
+    border: 1px solid $neonBlue;
+    background-color: transparent;
+    padding: 1rem;
+    text-align: center;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  
+  .button:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px $neonBlue;
+    color: $midnightBlue;
+  }
+  
+  .button:after {
+    content: "";
+    background: $neonBlue;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .button:active:after {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+  
+  .button:focus,
+  .button:focus:after,
+  .button:active {
+    color: $midnightBlue;
+    background-color: white; 
+    outline:0;
+ }
