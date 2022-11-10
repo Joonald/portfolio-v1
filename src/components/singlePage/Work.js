@@ -9,6 +9,11 @@ import Contact from '../sections/Contact';
 
 
 const Work = ( {featuredImage} ) => {
+
+    useEffect(() => {
+		document.title = "Jonny Nguyen's Creations";
+	}, []);
+    
     const { id } = useParams();
     const restPath = `https://jonnynguyen.com/portfolio-wp/wp-json/wp/v2/portfolio-projects/${id}?acf_format=standard&_embed`;
     const [restData, setData] = useState([]);

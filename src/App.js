@@ -39,7 +39,7 @@ function App() {
         <main id="main">
           <Suspense fallback={<Loading/>}>
             <Routes>
-              <Route path='/' element={<FrontPage featuredImage={featuredImage} />} />
+              <Route exact path='/' element={<FrontPage featuredImage={featuredImage} />} />
               <Route path='/work/:id' element={<Work featuredImage={featuredImage} />} />
             </Routes>
           </Suspense>

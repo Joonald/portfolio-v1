@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseCrack, faCircleUser, faFolderOpen, faEnvelope, faCode } from '@fortawesome/free-solid-svg-icons'; 
 import { HashLink } from 'react-router-hash-link';
@@ -11,6 +11,11 @@ const Contact = lazy(() => import("./sections/Contact"));
 
 
 const FrontPage = ( {featuredImage} ) => {
+
+    useEffect(() => {
+		document.title = "Jonny Nguyen";
+	}, []);
+
     const [isActive, setIsActive] = useState('home');
     
     function handleClick (value) {
