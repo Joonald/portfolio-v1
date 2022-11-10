@@ -7,17 +7,18 @@
 
 .single-work h1 {
     letter-spacing: .15rem;
+    color: $neonBlue;
 }
 
 .team-list li {
     display: inline-block;
     padding-right: 1rem;
-    color: $neonBlue;
     font-size: .75rem;
 }
 
 .single-work .team-list {
     margin: 0;
+    display: inline-block;
 }
 
 .return-nav {
@@ -50,4 +51,43 @@
     transition: width .4s;
 }
 
+.project-overview,
+.tab-content {
+    @include neon-background;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
 
+.work-links {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.work-links a {
+    text-decoration: none;
+    color: $deepSpaceNavy;
+    border: 1px solid $neonBlue;
+    padding: .75rem;
+    background-color: $neonBlue;
+    border-radius: 4px;
+}
+
+.sub-sub-heading {
+    margin-bottom: 1rem;
+}
+
+.sub-sub-heading p {
+    padding-right: .5rem;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.work-details {
+    @include neon-background;
+    padding: 1rem;
+}
+.project-tabs .filter-tab {
+    padding-right: 0;
+}

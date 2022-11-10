@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Loading from '../utilities/Loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faSquareTwitter, faSquareGithub } from '@fortawesome/free-brands-svg-icons'; 
+import TechSkills from './TechSkills';
 
 const About = () => {
     const restPath = 'https://jonnynguyen.com/portfolio-wp/wp-json/wp/v2/pages/37';
@@ -26,16 +27,17 @@ const About = () => {
         <>
         { isLoaded ?
             <section id="about">
-                <section>
                     <h2 className="sub-heading-text">{restData.title.rendered}</h2>
-                    <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.acf.about_me_text}}>
-                    </div>
+                    <section className='about-content'>
+                    <section className="about-text" dangerouslySetInnerHTML={{__html:restData.acf.about_me_text.replace(/(?:\r\n|\r|\n)/g, '<br>')}}>
+                    </section>
                     <ul className='social-links'>
                         <li><a href="https://www.linkedin.com/in/jonny-nguyen-56a124252/"><FontAwesomeIcon className='linkedin' icon={faLinkedin}/></a></li>
                         <li><a href="https://github.com/Joonald"><FontAwesomeIcon className='github' icon={faSquareGithub}/></a></li>
                         <li><a href="https://twitter.com/JonnyPNguyen"><FontAwesomeIcon className='twitter' icon={faSquareTwitter}/></a></li>
                     </ul>
-                </section>
+                    </section>
+                    <TechSkills />
             </section>
                 
         : 
