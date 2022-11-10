@@ -118,3 +118,19 @@
         justify-content: space-around;
     }
 }
+
+@media (min-width: 1200px) {
+    #about {
+        max-width: 900px;
+        grid-template-columns: 1fr repeat(2, minmax(0, 500px)) 1fr;
+    }
+}
+
+@media (min-width: 1350px) {
+    #about {
+        max-width: 1100px;
+    }
+    .creation {
+        grid-template-columns: 1fr repeat(2, minmax(0, 700px)) 1fr;
+    }
+}

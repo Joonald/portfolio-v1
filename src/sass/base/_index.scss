@@ -46,3 +46,8 @@
 		padding: 0 2rem;
 	}
 }
+@media (min-width: 1350px) {
+	#root {
+		max-width: 1200px;
+	}
+}
