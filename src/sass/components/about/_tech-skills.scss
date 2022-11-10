@@ -10,3 +10,9 @@
 #tech-skills .neon-text {
     text-align: center;
 }
+
+@media (min-width: 768px) {
+    .sphere > div {
+        height: 40vh !important;
+    }
+}

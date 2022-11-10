@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
 import Loading from '../utilities/Loading';
 import Creation from '../sections/Creation';
 import Buttons from '../utilities/Button';
@@ -11,38 +11,35 @@ const Works = ( {featuredImage} ) => {
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
     const [creation, setCreation] = useState('65');
+    const [slug, setSlug] = useState('the-villas-bay')
 
     const settings = {
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 2,
-        slidesToScroll: 1,
+        dots: false,
+        infinite: false,
         arrows: false,
-        appendDots: dots => (
-            <div
-              style={{
-                backgroundColor: "transparent",
-                padding: "10px"
-              }}
-            >
-              <ul style={{ margin: "0px" }}> {dots} </ul>
-            </div>
-          ),
-          customPaging: i => (
-            <button
-              style={{
-                color: "#0E3A73",
-                border: "1px #0E3A73 solid"
-              }}
-            >
-              {i + 1}
-            </button>
-          ),
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 3,
+            }
+          },
+          {
+            breakpoint: 500,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
+        ],
     }
     
-    function handleClick(value) {
+    function handleClick(value, slug) {
         setCreation(value);
+        setSlug(slug)
     };
 
 
@@ -68,11 +65,12 @@ const Works = ( {featuredImage} ) => {
                     <ul className="creation-tabs">
                         <Slider {...settings}>
                         {restData.map( (tab, i) => 
-                        <li key={i}><Buttons value={tab.id} text={tab.title.rendered} handleClick={handleClick} 
+                        <li key={i}><Buttons state={slug} slug={tab.slug}  value={tab.id} text={tab.title.rendered} handleClick={handleClick} 
                         /></li>
                         ) }
                         </Slider>  
-                    </ul> 
+                    </ul>
+                    
                     <Creation featuredImage={featuredImage} value={creation} />
             </section>
         : 

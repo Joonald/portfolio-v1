@@ -1,6 +1,18 @@
+@import '../../utilities/mixins';
+
 #about {
     min-height: 50vh;
+    margin: 2rem auto;
+    max-width: 750px;
 }
+
+.about-content {
+    @include neon-background;
+    padding: 1rem;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
 .sub-heading-text {
     padding-top: 2rem;
     letter-spacing: 3px;
@@ -9,7 +21,8 @@
     color: $neonBlue;
 }
 
-.sub-heading-text:after {
+#about .sub-heading-text:after,
+#works .sub-heading-text:after {
     content: "";
     display: inline-block;
     height: 0.5rem;
@@ -77,5 +90,31 @@
     }
     100% {
         filter:  drop-shadow( 0 0 10px #FFF) 
+    }
+}
+
+@media (min-width: 768px) {
+
+    #about {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(0, 350px)) 1fr;
+        column-gap: 1.5rem;
+    }
+    #about .sub-heading-text {
+        width: 100%;
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+    .about-content {
+        grid-column: 2/3;
+    }
+
+    #tech-skills {
+        grid-column: 3/4;
+    }
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 }

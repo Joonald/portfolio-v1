@@ -7,16 +7,29 @@
    padding-top: 1rem;
    padding-bottom: 2rem;
    justify-content: center;
+   max-width: 600px;
+   margin: 0 auto;
 }
 
 #contact p {
     text-align: center;
 }
+
+.contact-content {
+  margin-top: 2rem;
+  justify-self: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  // @include neon-background;
+}
+#contact .sub-heading-text {
+  text-align: center;
+}
 .thank-you,
 .say-hello {
     width: fit-content;
 }
-
 .button {
     text-transform: uppercase;
     color: $neonBlue;

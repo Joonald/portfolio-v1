@@ -28,14 +28,17 @@ const Contact = () => {
         navigator.clipboard.writeText(email);
         setIsActive(current => !current);
     }
-
+    
+    
     return (
         <>
         { isLoaded ?
             <section id='contact'>
-                <h2 className='sub-heading-text'>{restData.title.rendered}</h2>
-                <p>{restData.acf.contact_text}</p>
-                <button className='button' onClick={copyEmail}>{isActive ? 'Email Copied!' : 'Say Hello!'}</button>
+                <h2 className='sub-heading-text'>{restData.title.rendered.replace(/(?:&#8217;)/g, "'")}</h2>
+                <section className='contact-content'>
+                    <p>{restData.acf.contact_text}</p>
+                    <button className='button' onClick={copyEmail}>{isActive ? 'Email Copied!' : 'Say Hello!'}</button>
+                </section>
             </section>
         :
             <Loading />

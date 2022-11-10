@@ -10,7 +10,7 @@ import Contact from '../sections/Contact';
 
 const Work = ( {featuredImage} ) => {
     const { id } = useParams();
-    const restPath = `https://jonnynguyen.com/portfolio-wp/wp-json/wp/v2/portfolio-projects/${id}/?_embed&acf_format=standard`;
+    const restPath = `https://jonnynguyen.com/portfolio-wp/wp-json/wp/v2/portfolio-projects/${id}?acf_format=standard&_embed`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 
@@ -41,25 +41,30 @@ const Work = ( {featuredImage} ) => {
                             }
                         </section>
                         <section>
-                            <div>
+                            <div className='work-links'>
                                 { restData.acf.github && <a href={restData.acf.github}>Github</a>}
                                 { restData.acf.live_site && <a href={restData.acf.live_site}>Live Site</a> }
                             </div>
                             <h1>{restData.title.rendered}</h1>
-                            {/* <p>Project Duration: {restData.acf.project_duration}</p> */}
-                            <ul className='tech-skill-list'>
-                                {restData.acf.development_stack.map( (skill, i) => <li key={i}>{skill.tech_skill}</li>)}
-                            </ul>
-                            { restData.acf.development_team &&
-                            <div>
-                                <p>Team:</p>
-                                <ul className='team-list'>
-                                    {restData.acf.development_team.map( (member, i) => <li key={i}>{member.team_member}</li>)}
-                                </ul>
-                            </div> }
+                            <section className='work-details'>
+                                <p>Project Duration:  {restData.acf.project_duration}</p>
+                                { restData.acf.development_team &&
+                                <div className='sub-sub-heading'>
+                                    <p>Team: </p>
+                                    <ul className='team-list'>
+                                        {restData.acf.development_team.map( (member, i) => <li key={i}> {member.team_member} </li>)}
+                                    </ul>
+                                </div> }
+                                <div className='sub-sub-heading'>
+                                    <p>Technology Stack:</p>
+                                    <ul className='tech-skill-list'>
+                                        { restData.acf.development_stack.map( (skill, i) => <li key={i}>{skill.tech_skill}</li>)}
+                                    </ul>
+                                </div>
+                            </section>
                             <h2 className='sub-heading-text'>Project Overview</h2>
-                            <p>{restData.acf.project_overview}</p>
-                            <ProjectTabs data={restData.acf.project_content} />
+                            <p className='project-overview'>{restData.acf.project_overview}</p>
+                            <ProjectTabs data={restData} />
                         </section>
                     </section>
                 </section>

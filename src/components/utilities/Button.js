@@ -1,6 +1,6 @@
-const Buttons = ( {value, text, handleClick} ) => {
+const Buttons = ( {value, text, handleClick, state, slug} ) => {
     return (
-        <button className="filter-tab" value={value} onClick={()=>handleClick(value)}>{text}</button>
+        <button className={state === slug ? 'filter-tab active-tab' : 'filter-tab'} value={value} onClick={()=>handleClick(value, slug)}>{text}</button>
     )
 }
 export default Buttons;
