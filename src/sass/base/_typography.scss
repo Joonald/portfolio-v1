@@ -1,14 +1,15 @@
-@use '../utilities/variables';
+@import '../utilities/variables';
 
 body,
 button,
 input,
 select,
 textarea {
-	color: #A9BBBC;
+	color: $rainCloudGrey;
 	font-family: 'Montserrat-Regular', sans-serif;
 	font-size: 14px;
-	line-height: 1.5;
+	line-height: 1.6;
+	letter-spacing: 1px;
 }
 
 h1,
@@ -54,4 +55,34 @@ address {
 
 @media (min-height: 768px) {
 	
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-size: 16px;
+		line-height: 1.7;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'Montserrat-Bold', sans-serif;
+		clear: both;
+	}
+
+h1 {
+	font-size: 2.4rem;
+}
+
+h2 {
+	font-size: 1.7rem;
+}
+
+h3 {
+	font-size: 1.3rem;
+}
 }
