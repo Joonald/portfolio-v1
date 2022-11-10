@@ -22,8 +22,6 @@ const Creation = ( {featuredImage, value} ) => {
         fetchData()
     }, [restPath]);
 
-    console.log(restData)
-
     return (
         <>
         { isLoaded ?

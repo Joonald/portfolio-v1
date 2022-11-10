@@ -27,8 +27,8 @@ const Intro = () => {
             <section id="intro">
                 <section className="intro-content">
                     <p className="neon-text">{restData.acf.introduction}</p>
-                    <h1 className="my-name">{restData.acf.name}.</h1>
-                    <h2 className="neon-text">{restData.acf.role}</h2> 
+                    <h1 className="my-name">{restData.acf.name}</h1>
+                    <h2 className="neon-text">{restData.acf.role}.</h2> 
                     <p>{restData.acf.short_description}</p>
                     <HashLink to='#works' className='outline-btn' smooth>My Creations</HashLink>      
                 </section>
