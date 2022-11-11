@@ -1,17 +1,15 @@
-import { lazy, Suspense, useState, useEffect } from 'react';
+import { lazy, useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseCrack, faCircleUser, faFolderOpen, faEnvelope, faCode } from '@fortawesome/free-solid-svg-icons'; 
 import { HashLink } from 'react-router-hash-link';
-import Loading from './utilities/Loading';
+
 const Intro = lazy( () => import("./sections/Intro")); 
 const About = lazy(() => import("./sections/About"));
 const Works = lazy(() => import("./sections/Works"));
 const Contact = lazy(() => import("./sections/Contact"));
 
-
-
-const FrontPage = ( {featuredImage} ) => {
-
+const FrontPage = ( {featuredImage, restData} ) => {
+    
     useEffect(() => {
 		document.title = "Jonny Nguyen";
 	}, []);
@@ -23,7 +21,7 @@ const FrontPage = ( {featuredImage} ) => {
     };
 
     return(
-        <>  
+        <>
             <div className="navBar">
                 <nav className="site-navigation">
                     <ul>
@@ -35,13 +33,11 @@ const FrontPage = ( {featuredImage} ) => {
                     </ul>
                 </nav>
             </div>
-            <Suspense fallback={<Loading/>}>
-            <Intro />
-            <About />
+            <Intro data={restData[3]}/>
+            <About data={restData[2]}/>
             <Works featuredImage={featuredImage}/>
-            <Contact />
-            </Suspense>
-        </>   
+            <Contact data={restData[1]} />
+        </>
     );
 };
 
