@@ -1,14 +1,30 @@
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { ReactComponent as ReactLogo } from './port-logo-blue.svg';
-import { lazy, Suspense } from 'react';
+import { useState, useEffect } from 'react';
+import FrontPage from './components/FrontPage';
+import Work from './components/singlePage/Work';
+import React from 'react';
 import Loading from './components/utilities/Loading';
-const FrontPage = lazy( () => import('./components/FrontPage')); 
-const Work = lazy(() => import('./components/singlePage/Work'));
-
-
 
 function App() {
+  const restPath = 'https://jonnynguyen.com/portfolio-wp/wp-json/wp/v2/pages';
+  const [restData, setData] = useState([]);
+  const [isLoaded, setLoadStatus] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(restPath)
+        if ( response.ok ) {
+          const data = await response.json()
+          setData(data)
+          setLoadStatus(true)
+          } else {
+            setLoadStatus(false)
+          }
+      }
+    fetchData()
+    }, [restPath]);
 
   const featuredImage = ( featuredImageObject ) => {
     let imgWidth = featuredImageObject.media_details.sizes.full.width;
@@ -26,7 +42,6 @@ function App() {
     return {__html: img}
   }
 
-
   return (
       <Router basename="/">
 
@@ -35,18 +50,20 @@ function App() {
             <Link to='/'><ReactLogo className='logo' /></Link>
           </div>
         </header>
-        
+        { isLoaded ? 
         <main id="main">
-          <Suspense fallback={<Loading/>}>
             <Routes>
-              <Route exact path='/' element={<FrontPage featuredImage={featuredImage} />} />
-              <Route path='/work/:id' element={<Work featuredImage={featuredImage} />} />
+              <Route exact path='/' element={<FrontPage featuredImage={featuredImage} restData={restData} />} />
+              <Route path='/work/:id' element={<Work featuredImage={featuredImage} data={restData[1]} />} />
             </Routes>
-          </Suspense>
         </main>
+        : 
+        <Loading />
+        }
         <footer>
 				  <p className="copyright">Designed & Built by <a href="www.jonnynguyen.com">Jonny Nguyen</a>.</p>
         </footer>
+        
       </Router>
   );
 }

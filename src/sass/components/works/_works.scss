@@ -19,6 +19,7 @@
 }
 .creation .featured-images {
     margin-top: 0;
+    margin-bottom: 2.5rem;
     @include neon-background;
 }
 .creation .outline-btn {
@@ -47,7 +48,6 @@
     display: inline-block;
     padding-right: 1rem;
     color: $neonBlue;
-    font-size: .75rem;
 }
 
 .sub-title {

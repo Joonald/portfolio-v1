@@ -8,7 +8,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Contact from '../sections/Contact';
 
 
-const Work = ( {featuredImage} ) => {
+const Work = ( {featuredImage, data} ) => {
 
     useEffect(() => {
 		document.title = "Jonny Nguyen's Creations";
@@ -73,7 +73,7 @@ const Work = ( {featuredImage} ) => {
                         </section>
                     </section>
                 </section>
-                <Contact />
+                <Contact data={data} />
             </>
         : 
             <Loading />
