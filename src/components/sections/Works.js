@@ -9,8 +9,8 @@ const Works = ( {featuredImage} ) => {
     const restPath = 'https://jonnynguyen.com/portfolio-wp/wp-json/wp/v2/portfolio-projects';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
-    const [creation, setCreation] = useState('65');
-    const [slug, setSlug] = useState('the-villas-bay');
+    const [creation, setCreation] = useState('63');
+    const [slug, setSlug] = useState('portfolio-website');
 
     const settings = {
         dots: false,
