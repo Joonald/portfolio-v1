@@ -6,27 +6,21 @@ import Buttons from '../utilities/Button';
 import Slider from 'react-slick';
 
 const Works = ( {featuredImage} ) => {
-    const restPath = 'https://jonnynguyen.com/portfolio-wp/wp-json/wp/v2/portfolio-projects';
+    const restPath = 'https://jonnynguyen.com/react-headless/wp-json/wp/v2/portfolio-projects?_embed';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
-    const [creation, setCreation] = useState('63');
-    const [slug, setSlug] = useState('portfolio-website');
+    const [creation, setCreation] = useState('48');
+    const [slug, setSlug] = useState('match-that-pokemon');
 
     const settings = {
         dots: false,
         infinite: false,
         arrows: false,
         speed: 300,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
         responsive: [
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 3,
-            }
-          },
           {
             breakpoint: 500,
             settings: {

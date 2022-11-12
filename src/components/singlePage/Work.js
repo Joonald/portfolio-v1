@@ -15,7 +15,7 @@ const Work = ( {featuredImage, data} ) => {
 	}, []);
     
     const { id } = useParams();
-    const restPath = `https://jonnynguyen.com/portfolio-wp/wp-json/wp/v2/portfolio-projects/${id}?acf_format=standard&_embed`;
+    const restPath = `https://jonnynguyen.com/react-headless/wp-json/wp/v2/portfolio-projects/${id}?acf_format=standard&_embed`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 

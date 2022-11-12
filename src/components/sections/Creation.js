@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const Creation = ( {featuredImage, value} ) => {
-    const restPath = `https://jonnynguyen.com/portfolio-wp/wp-json/wp/v2/portfolio-projects/${value}?_embed&acf_format=standard`;
+    const restPath = `https://jonnynguyen.com/react-headless/wp-json/wp/v2/portfolio-projects/${value}?_embed&acf_format=standard`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 

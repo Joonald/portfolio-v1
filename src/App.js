@@ -8,7 +8,7 @@ import React from 'react';
 import Loading from './components/utilities/Loading';
 
 function App() {
-  const restPath = 'https://jonnynguyen.com/portfolio-wp/wp-json/wp/v2/pages';
+  const restPath = 'https://jonnynguyen.com/react-headless/wp-json/wp/v2/pages';
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 
@@ -54,7 +54,7 @@ function App() {
         <main id="main">
             <Routes>
               <Route exact path='/' element={<FrontPage featuredImage={featuredImage} restData={restData} />} />
-              <Route path='/work/:id' element={<Work featuredImage={featuredImage} data={restData[1]} />} />
+              <Route path='/work/:id' element={<Work featuredImage={featuredImage} data={restData[0]} />} />
             </Routes>
         </main>
         : 

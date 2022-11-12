@@ -33,10 +33,10 @@ const FrontPage = ( {featuredImage, restData} ) => {
                     </ul>
                 </nav>
             </div>
-            <Intro data={restData[3]}/>
-            <About data={restData[2]}/>
+            <Intro data={restData[2]}/>
+            <About data={restData[1]}/>
             <Works featuredImage={featuredImage}/>
-            <Contact data={restData[1]} />
+            <Contact data={restData[0]} />
         </>
     );
 };
