@@ -20,6 +20,7 @@ const Work = ( {featuredImage, data} ) => {
     const [isLoaded, setLoadStatus] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const fetchData = async () => {
             const response = await fetch(restPath)
             if ( response.ok ) {

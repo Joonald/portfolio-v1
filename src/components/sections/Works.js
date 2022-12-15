@@ -9,15 +9,15 @@ const Works = ( {featuredImage} ) => {
     const restPath = 'https://jonnynguyen.com/react-headless/wp-json/wp/v2/portfolio-projects?_embed';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
-    const [creation, setCreation] = useState('48');
-    const [slug, setSlug] = useState('match-that-pokemon');
+    const [creation, setCreation] = useState('56');
+    const [slug, setSlug] = useState('the-villas-bay');
 
     const settings = {
         dots: false,
         infinite: false,
         arrows: false,
         speed: 300,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         initialSlide: 0,
         responsive: [
